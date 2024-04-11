@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище AvtosalonVipDataBaseModelContainer" CdmEntityContainer="AvtosalonVipDataBaseEntities">
+    <EntitySetMapping Name="Avtomobili">
+      <EntityTypeMapping TypeName="AvtosalonVipDataBaseModel.Avtomobili">
+        <MappingFragment StoreEntitySet="Avtomobili">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idmodeli" ColumnName="idmodeli" />
+          <ScalarProperty Name="Godvipuska" ColumnName="Godvipuska" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chek">
+      <EntityTypeMapping TypeName="AvtosalonVipDataBaseModel.Chek">
+        <MappingFragment StoreEntitySet="Chek">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idAvtomobilya" ColumnName="idAvtomobilya" />
+          <ScalarProperty Name="idinformation" ColumnName="idinformation" />
+          <ScalarProperty Name="idTovari" ColumnName="idTovari" />
+          <ScalarProperty Name="idsotrudniki" ColumnName="idsotrudniki" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Info">
+      <EntityTypeMapping TypeName="AvtosalonVipDataBaseModel.Info">
+        <MappingFragment StoreEntitySet="Info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="datacalen" ColumnName="datacalen" />
+          <ScalarProperty Name="Oplata" ColumnName="Oplata" />
+          <ScalarProperty Name="idKlient" ColumnName="idKlient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klients">
+      <EntityTypeMapping TypeName="AvtosalonVipDataBaseModel.Klients">
+        <MappingFragment StoreEntitySet="Klients">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameKlients" ColumnName="NameKlients" />
+          <ScalarProperty Name="FamiliyaKlients" ColumnName="FamiliyaKlients" />
+          <ScalarProperty Name="TelefoneKlients" ColumnName="TelefoneKlients" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarkaAvtomobila">
+      <EntityTypeMapping TypeName="AvtosalonVipDataBaseModel.MarkaAvtomobila">
+        <MappingFragment StoreEntitySet="MarkaAvtomobila">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NazvaniyeMarki" ColumnName="NazvaniyeMarki" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModeliAvtomobila">
+      <EntityTypeMapping TypeName="AvtosalonVipDataBaseModel.ModeliAvtomobila">
+        <MappingFragment StoreEntitySet="ModeliAvtomobila">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idmarki" ColumnName="idmarki" />
+          <ScalarProperty Name="NazvaniyeModeli" ColumnName="NazvaniyeModeli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rolu">
+      <EntityTypeMapping TypeName="AvtosalonVipDataBaseModel.Rolu">
+        <MappingFragment StoreEntitySet="Rolu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NazvanieRolu" ColumnName="NazvanieRolu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Satrudniki">
+      <EntityTypeMapping TypeName="AvtosalonVipDataBaseModel.Satrudniki">
+        <MappingFragment StoreEntitySet="Satrudniki">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
+          <ScalarProperty Name="Parol" ColumnName="Parol" />
+          <ScalarProperty Name="IDroli" ColumnName="IDroli" />
+          <ScalarProperty Name="LoginSat" ColumnName="LoginSat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiseRecords">
+      <EntityTypeMapping TypeName="AvtosalonVipDataBaseModel.ServiseRecords">
+        <MappingFragment StoreEntitySet="ServiseRecords">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idAvtomobilya" ColumnName="idAvtomobilya" />
+          <ScalarProperty Name="Dataobslujivaniya" ColumnName="Dataobslujivaniya" />
+          <ScalarProperty Name="Opisaniyerabot" ColumnName="Opisaniyerabot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tovar">
+      <EntityTypeMapping TypeName="AvtosalonVipDataBaseModel.Tovar">
+        <MappingFragment StoreEntitySet="Tovar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NazvaniyeTov" ColumnName="NazvaniyeTov" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

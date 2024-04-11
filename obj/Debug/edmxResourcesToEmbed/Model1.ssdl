@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище AvtosalonVipDataBaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Avtomobili">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idmodeli" Type="int" />
+    <Property Name="Godvipuska" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Chek">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idAvtomobilya" Type="int" />
+    <Property Name="idinformation" Type="int" />
+    <Property Name="idTovari" Type="int" />
+    <Property Name="idsotrudniki" Type="int" />
+  </EntityType>
+  <EntityType Name="Info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datacalen" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Oplata" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="idKlient" Type="int" />
+  </EntityType>
+  <EntityType Name="Klients">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameKlients" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="FamiliyaKlients" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="TelefoneKlients" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MarkaAvtomobila">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvaniyeMarki" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModeliAvtomobila">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idmarki" Type="int" />
+    <Property Name="NazvaniyeModeli" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rolu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvanieRolu" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Satrudniki">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nickname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Middlename" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Parol" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="IDroli" Type="int" Nullable="false" />
+    <Property Name="LoginSat" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiseRecords">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idAvtomobilya" Type="int" />
+    <Property Name="Dataobslujivaniya" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Opisaniyerabot" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tovar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvaniyeTov" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Avtomobil__idmod__5535A963">
+    <End Role="ModeliAvtomobila" Type="Self.ModeliAvtomobila" Multiplicity="0..1" />
+    <End Role="Avtomobili" Type="Self.Avtomobili" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModeliAvtomobila">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Avtomobili">
+        <PropertyRef Name="idmodeli" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chek__idAvtomobi__7B5B524B">
+    <End Role="Avtomobili" Type="Self.Avtomobili" Multiplicity="0..1" />
+    <End Role="Chek" Type="Self.Chek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avtomobili">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Chek">
+        <PropertyRef Name="idAvtomobilya" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chek__idinformat__7C4F7684">
+    <End Role="Info" Type="Self.Info" Multiplicity="0..1" />
+    <End Role="Chek" Type="Self.Chek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Chek">
+        <PropertyRef Name="idinformation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chek__idsotrudni__7D439ABD">
+    <End Role="Satrudniki" Type="Self.Satrudniki" Multiplicity="0..1" />
+    <End Role="Chek" Type="Self.Chek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Satrudniki">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Chek">
+        <PropertyRef Name="idsotrudniki" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chek__idTovari__7A672E12">
+    <End Role="Tovar" Type="Self.Tovar" Multiplicity="0..1" />
+    <End Role="Chek" Type="Self.Chek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tovar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Chek">
+        <PropertyRef Name="idTovari" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Info__idKlient__72C60C4A">
+    <End Role="Klients" Type="Self.Klients" Multiplicity="0..1" />
+    <End Role="Info" Type="Self.Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klients">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Info">
+        <PropertyRef Name="idKlient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ModeliAvt__idmar__52593CB8">
+    <End Role="MarkaAvtomobila" Type="Self.MarkaAvtomobila" Multiplicity="0..1" />
+    <End Role="ModeliAvtomobila" Type="Self.ModeliAvtomobila" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarkaAvtomobila">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ModeliAvtomobila">
+        <PropertyRef Name="idmarki" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Satrudnik__IDrol__4BAC3F29">
+    <End Role="Rolu" Type="Self.Rolu" Multiplicity="1" />
+    <End Role="Satrudniki" Type="Self.Satrudniki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Satrudniki">
+        <PropertyRef Name="IDroli" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ServiseRe__idAvt__00200768">
+    <End Role="Avtomobili" Type="Self.Avtomobili" Multiplicity="0..1" />
+    <End Role="ServiseRecords" Type="Self.ServiseRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avtomobili">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ServiseRecords">
+        <PropertyRef Name="idAvtomobilya" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище AvtosalonVipDataBaseModelContainer">
+    <EntitySet Name="Avtomobili" EntityType="Self.Avtomobili" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chek" EntityType="Self.Chek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Info" EntityType="Self.Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Klients" EntityType="Self.Klients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MarkaAvtomobila" EntityType="Self.MarkaAvtomobila" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModeliAvtomobila" EntityType="Self.ModeliAvtomobila" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rolu" EntityType="Self.Rolu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Satrudniki" EntityType="Self.Satrudniki" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiseRecords" EntityType="Self.ServiseRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tovar" EntityType="Self.Tovar" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Avtomobil__idmod__5535A963" Association="Self.FK__Avtomobil__idmod__5535A963">
+      <End Role="ModeliAvtomobila" EntitySet="ModeliAvtomobila" />
+      <End Role="Avtomobili" EntitySet="Avtomobili" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chek__idAvtomobi__7B5B524B" Association="Self.FK__Chek__idAvtomobi__7B5B524B">
+      <End Role="Avtomobili" EntitySet="Avtomobili" />
+      <End Role="Chek" EntitySet="Chek" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chek__idinformat__7C4F7684" Association="Self.FK__Chek__idinformat__7C4F7684">
+      <End Role="Info" EntitySet="Info" />
+      <End Role="Chek" EntitySet="Chek" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chek__idsotrudni__7D439ABD" Association="Self.FK__Chek__idsotrudni__7D439ABD">
+      <End Role="Satrudniki" EntitySet="Satrudniki" />
+      <End Role="Chek" EntitySet="Chek" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chek__idTovari__7A672E12" Association="Self.FK__Chek__idTovari__7A672E12">
+      <End Role="Tovar" EntitySet="Tovar" />
+      <End Role="Chek" EntitySet="Chek" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Info__idKlient__72C60C4A" Association="Self.FK__Info__idKlient__72C60C4A">
+      <End Role="Klients" EntitySet="Klients" />
+      <End Role="Info" EntitySet="Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ModeliAvt__idmar__52593CB8" Association="Self.FK__ModeliAvt__idmar__52593CB8">
+      <End Role="MarkaAvtomobila" EntitySet="MarkaAvtomobila" />
+      <End Role="ModeliAvtomobila" EntitySet="ModeliAvtomobila" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Satrudnik__IDrol__4BAC3F29" Association="Self.FK__Satrudnik__IDrol__4BAC3F29">
+      <End Role="Rolu" EntitySet="Rolu" />
+      <End Role="Satrudniki" EntitySet="Satrudniki" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ServiseRe__idAvt__00200768" Association="Self.FK__ServiseRe__idAvt__00200768">
+      <End Role="Avtomobili" EntitySet="Avtomobili" />
+      <End Role="ServiseRecords" EntitySet="ServiseRecords" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,50 @@
+﻿<Window x:Class="PRR5AVTOsalon.perekup"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PRR5AVTOsalon"
+      mc:Ignorable="d" 
+      
+      Title="perekup"  Height="450" Width="800">
+        
+    <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="Naytibb"/>
+            <Button Content="NAYTI" Grid.Column="1" x:Name="Nayti" Click="Nayti_Click"  />
+            <Button Content="OCHISTKA" x:Name="Ochidtka" Grid.Column="1" Grid.Row="1" Click="Ochidtka_Click" />
+        </Grid>
+        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" x:Name="perekupDGR" SelectionChanged="perekupDGR_SelectionChanged"  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Marka" Binding="{Binding Avtomobili.ModeliAvtomobila.MarkaAvtomobila.NazvaniyeMarki}" />
+
+                <DataGridTextColumn Header="Model" Binding="{Binding Avtomobili.ModeliAvtomobila.NazvaniyeModeli}" />
+                <DataGridTextColumn Header="God Vipuska" Binding="{Binding Avtomobili.Godvipuska}" />
+                <DataGridTextColumn Header="Price" Binding="{Binding Avtomobili.Price}" />
+                <DataGridTextColumn Header="Data Obslujivaniya" Binding="{Binding Dataobslujivaniya}" />
+                <DataGridTextColumn Header="OpisanieRabot" Binding="{Binding Opisaniyerabot}" />
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        <TextBlock Text="MARKA"  FontSize="16" FontFamily="Algerian"   />
+        <TextBox x:Name="VvodMarka" MaxLength="30" />
+        <TextBlock Text="MODEL" FontSize="16" FontFamily="Algerian" />
+        <TextBox x:Name="VvodModeli" MaxLength="30" />
+        <TextBlock Text="PRICE" FontSize="16" FontFamily="Algerian" />
+        <TextBox x:Name="VvodPrice" MaxLength="15"/>
+        <TextBox x:Name="ViborBB"/>
+        <ComboBox x:Name="ViborModel" SelectionChanged="ViborModel_SelectionChanged" DisplayMemberPath="name"/>
+        <Button Content="ДОБАВИТЬ" x:Name="Dobavit" Click="Dobavit_Click" />
+        <Button Content="ИЗМЕНИТЬ" x:Name="Izmenit" Click="Izmenit_Click_1" />
+        <Button Content="Удалить" x:Name="Delete" Click="Delete_Click" />
+        <Button Content="Close" x:Name="Clooose" Click="Clooose_Click" />
+    </StackPanel>
+</Window>

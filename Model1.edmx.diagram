@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="43a73681ea1a4337a162ef59394f4fcd" Name="Diagram1">
+        <EntityTypeShape EntityType="AvtosalonVipDataBaseModel.Avtomobili" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtosalonVipDataBaseModel.Chek" Width="1.5" PointX="7.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtosalonVipDataBaseModel.Info" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtosalonVipDataBaseModel.Klients" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtosalonVipDataBaseModel.MarkaAvtomobila" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtosalonVipDataBaseModel.ModeliAvtomobila" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtosalonVipDataBaseModel.Rolu" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtosalonVipDataBaseModel.Satrudniki" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtosalonVipDataBaseModel.ServiseRecords" Width="1.5" PointX="7.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AvtosalonVipDataBaseModel.Tovar" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="AvtosalonVipDataBaseModel.FK__Avtomobil__idmod__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="AvtosalonVipDataBaseModel.FK__Chek__idAvtomobi__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="AvtosalonVipDataBaseModel.FK__ServiseRe__idAvt__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="AvtosalonVipDataBaseModel.FK__Chek__idinformat__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="AvtosalonVipDataBaseModel.FK__Chek__idsotrudni__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="AvtosalonVipDataBaseModel.FK__Chek__idTovari__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="AvtosalonVipDataBaseModel.FK__Info__idKlient__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="AvtosalonVipDataBaseModel.FK__ModeliAvt__idmar__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="AvtosalonVipDataBaseModel.FK__Satrudnik__IDrol__4BAC3F29" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

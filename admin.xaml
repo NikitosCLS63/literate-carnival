@@ -1,0 +1,47 @@
+﻿<Window x:Class="PRR5AVTOsalon.admin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PRR5AVTOsalon"
+      mc:Ignorable="d" 
+     
+      Title="admin"  Height="450" Width="800">
+
+    <StackPanel>
+        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" x:Name="adminDGR" SelectionChanged="FdminDGR_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id Sat" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Nickname}" />
+                <DataGridTextColumn Header="Surname" Binding="{Binding Surname}" />
+                <DataGridTextColumn Header="Middlename" Binding="{Binding Middlename}" />
+                <DataGridTextColumn Header="Parol" Binding="{Binding Parol}" />
+                <DataGridTextColumn Header="idRoli" Binding="{Binding Rolu.NazvanieRolu}" />
+                <DataGridTextColumn Header="LoginSat" Binding="{Binding LoginSat}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Text="Name"/>
+        <TextBox x:Name="Namebx" Height="20"/>
+        <TextBlock Text="Surname"/>
+        <TextBox x:Name="Surnamebx" Height="20"/>
+        <TextBlock Text="Middlename"/>
+        <TextBox x:Name="Middlenamebx" Height="20"/>
+        <TextBlock Text="Parol"/>
+        <TextBox x:Name="Parolbx" Height="20" MaxLength="4"/>
+        <TextBlock Text="Rolu"/>
+        <TextBox x:Name="Rolubx" Height="20"/>
+        <TextBlock Text="LoginSat"/>
+        <TextBox x:Name="LoginSatbx" Height="20"/>
+        
+        
+       
+        <Button x:Name="Dob" Height="30" Content="Dobavit" Click="Dob_Click"/>
+        <ComboBox x:Name="Filter" SelectionChanged="Filter_SelectionChanged"  DisplayMemberPath="NazvanieRolu"  SelectedValuePath="id"  />
+
+
+
+
+
+
+    </StackPanel>
+</Window>
